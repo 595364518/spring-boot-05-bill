@@ -14,12 +14,14 @@
             <strong>你现在所在的位置是:</strong>
             <span>供应商管理页面</span>
         </div>
-        <div class="search">
-            <span>供应商名称：</span>
-            <input type="text" placeholder="请输入供应商的名称"/>
-            <input type="button" value="查询"/>
-            <a href="add.html">添加供应商</a>
-        </div>
+        <form id="searchForm" th:action="@{/providers}" th:method="get">
+            <div class="search">
+                <span>供应商名称：</span>
+                <input type="text" name="providerName" placeholder="请输入供应商的名称"/>
+                <input type="button" onclick="$('#searchForm').submit()" value="查询"/>
+                <a href="add.html">添加供应商</a>
+            </div>
+        </form>
         <!--供应商操作表格-->
         <table class="providerTable" cellpadding="0" cellspacing="0">
             <tr class="firstTr">
@@ -31,30 +33,17 @@
                 <th width="10%">创建时间</th>
                 <th width="30%">操作</th>
             </tr>
-            <tr>
-                <td>PRO-CODE—001</td>
-                <td>测试供应商001</td>
-                <td>韩露</td>
-                <td>15918230478</td>
-                <td>15918230478</td>
-                <td>2015-11-12</td>
+            <tr th:each="p : ${providers}">
+                <td th:text="${p.providerCode}"></td>
+                <td th:text="${p.providerName}"></td>
+                <td th:text="${p.people}"></td>
+                <td th:text="${p.phone}"></td>
+                <td th:text="${p.fax}"></td>
+                <td th:text="${#dates.format(p.createDate,'yy-mm-dd hh:mm:ss')}"></td>
                 <td>
                     <a href="view.html"><img th:src="@{/img/read.png}" src="../img/read.png" alt="查看" title="查看"/></a>
                     <a href="update.html"><img th:src="@{/img/xiugai.png}" src="../img/xiugai.png" alt="修改" title="修改"/></a>
 					<a href="#" class="delete" ><img th:src="@{/img/schu.png}" src="../img/schu.png" alt="删除" title="删除"/></a>
-                </td>
-            </tr>
-            <tr>
-                <td>PRO-CODE—001</td>
-                <td>测试供应商001</td>
-                <td>韩露</td>
-                <td>15918230478</td>
-                <td>15918230478</td>
-                <td>2015-11-12</td>
-                <td>
-                    <a href="view.html"><img th:src="@{/img/read.png}" src="../img/read.png" alt="查看" title="查看"/></a>
-                    <a href="update.html"><img th:src="@{/img/xiugai.png}" src="../img/xiugai.png" alt="修改" title="修改"/></a>
-                    <a href="#" class="delete" ><img th:src="@{/img/schu.png}" src="../img/schu.png" alt="删除" title="删除"/></a>
                 </td>
             </tr>
         </table>

@@ -3,6 +3,7 @@ package com.mengxuegu.springboot.controller;
 import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +18,14 @@ import java.util.Map;
 @Controller
 public class LoginController {
 
+    /**
+     * 用户登录
+     * @param session 登录成功把用户名保存在session中
+     * @param username 用户名
+     * @param password 密码
+     * @param map 响应数据
+     * @return 跳转页面
+     */
     @PostMapping("/login")
     public String login(HttpSession session, String username, String password, Map<String,Object> map){
 
@@ -30,5 +39,21 @@ public class LoginController {
         }
         map.put("msg","用户名或密码错误");
         return "main/login";
+    }
+
+    /**
+     * 退出登录
+     * @param session 用户记录
+     * @return 重定向到登录页面
+     */
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+        //1.删除session中的登录记录
+        session.removeAttribute("loginUser");
+        //2.注销session对象
+        session.invalidate();
+        //3.返回登录页面
+        return "redirect:/index.html";
+
     }
 }

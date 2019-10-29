@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class LoginHandlerInterceptor implements HandlerInterceptor {
 
+    //调用目标方法之前被调用
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
