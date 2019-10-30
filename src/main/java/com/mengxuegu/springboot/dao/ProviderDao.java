@@ -5,10 +5,7 @@ import com.mengxuegu.springboot.entities.Provider;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Repository
 public class ProviderDao {
@@ -32,6 +29,7 @@ public class ProviderDao {
         if(provider.getPid() == null){
             provider.setPid(initId++);
         }
+        provider.setCreateDate(new Date());
         providerMap.put(provider.getPid(), provider);
     }
 
@@ -54,7 +52,7 @@ public class ProviderDao {
                     providers.add(provider);
                 }
             }
-            //查询不到人
+            //查询不到包含关键字的供应商，则返回空
             if(count == 0){
                 providers = new ArrayList<Provider>();
             }
