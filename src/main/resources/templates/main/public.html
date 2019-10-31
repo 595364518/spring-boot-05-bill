@@ -21,7 +21,7 @@
 </header>
 <!--时间-->
 <section class="publicTime" id="public_time">
-    <span  id="time"></span>
+    <span  id="time" th:text="${#dates.format(#dates.createNow(),'yyyy/MM/dd 下午h:mm:ss')}"></span>
     <a href="#">温馨提示：为了能正常浏览，请使用高版本浏览器！（IE10+）</a>
 </section>
 <!--主体内容-->
@@ -30,7 +30,7 @@
         <h2 class="leftH2"><span class="span1"></span>功能列表 <span></span></h2>
         <nav>
             <ul class="list">
-                <li th:id="${activeUri == 'bill'?'active':''}"><a th:href="@{/bill/list.html}" href="../bill/list.html">账单管理</a></li>
+                <li th:id="${activeUri == 'bill'?'active':''}"><a th:href="@{/bills}" href="../bill/list.html">账单管理</a></li>
                 <li th:id="${activeUri == 'provider'?'active':''}"><a th:href="@{/providers}" href="../provider/list.html">供应商管理</a></li>
                 <li th:id="${activeUri == 'user'?'active':''}"><a th:href="@{/user/list.html}" href="../user/list.html">用户管理</a></li>
                 <li th:id="${activeUri == 'pwd'?'active':''}"><a th:href="@{/main/password.html}" href="../main/password.html">密码修改</a></li>

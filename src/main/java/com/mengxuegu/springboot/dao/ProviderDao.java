@@ -16,11 +16,11 @@ public class ProviderDao {
     static {
         providerMap = new HashMap<Integer, Provider>();
 
-        providerMap.put(2001, new Provider(2001, "PR-AA", "梦学谷供应商111", "小张", "18888666981", "深圳软件园", "0911-0123456", "品质A"));
-        providerMap.put(2002, new Provider(2002, "PR-BB", "梦学谷供应商222", "小李", "18888666982", "深圳软件园", "0911-0123453", "品质B"));
-        providerMap.put(2003, new Provider(2003, "PR-CC", "梦学谷供应商333", "小白", "18888666983", "深圳软件园", "0911-0123454", "品质C"));
-        providerMap.put(2004, new Provider(2004, "PR-DD", "梦学谷供应商444", "小梦", "18888666984", "深圳软件园", "0911-0123451", "品质D"));
-        providerMap.put(2005, new Provider(2005, "PR-EE", "梦学谷供应商555", "小谷", "18888666985", "深圳软件园", "0911-0123452", "品质E"));
+        providerMap.put(2001, new Provider(2001, "PR-AA", "北京市粮油总公司", "小张", "18888666981", "深圳软件园", "0911-0123456", "品质A"));
+        providerMap.put(2002, new Provider(2002, "PR-BB", "北京市粮油总公司", "小李", "18888666982", "深圳软件园", "0911-0123453", "品质B"));
+        providerMap.put(2003, new Provider(2003, "PR-CC", "邯郸市五得利面粉厂", "小白", "18888666983", "深圳软件园", "0911-0123454", "品质C"));
+        providerMap.put(2004, new Provider(2004, "PR-DD", "邯郸市五得利面粉厂", "小梦", "18888666984", "深圳软件园", "0911-0123451", "品质D"));
+        providerMap.put(2005, new Provider(2005, "PR-EE", "邯郸市五得利面粉厂", "小谷", "18888666985", "深圳软件园", "0911-0123452", "品质E"));
 
     }
 

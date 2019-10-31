@@ -8,18 +8,7 @@
 <section class="publicTime" th:replace="main/public :: #public_time"></section>
 <!--主体内容-->
 <section class="publicMian">
-    <div class="left" th:replace="main/public :: #public_left">
-        <h2 class="leftH2"><span class="span1"></span>功能列表 <span></span></h2>
-        <nav>
-            <ul class="list">
-                <li ><a href="../bill/list.html">账单管理</a></li>
-                <li><a href="../provider/list.html">供应商管理</a></li>
-                <li><a href="../user/list.html">用户管理</a></li>
-                <li><a href="../main/password.html">密码修改</a></li>
-                <li><a href="../main/login.html">退出系统</a></li>
-            </ul>
-        </nav>
-    </div>
+    <div class="left" th:replace="main/public :: #public_left"></div>
     <div class="right">
         <img class="wColck" src="../img/clock.jpg" alt=""/>
         <div class="wFont">

@@ -87,4 +87,10 @@ public class ProviderController {
         return "redirect:/providers";
     }
 
+    //删除供应商
+    @DeleteMapping("/provider/{pid}")
+    public String delete(@PathVariable(value = "pid") Integer pid){
+        providerDao.delete(pid);
+        return "redirect:/providers";
+    }
 }

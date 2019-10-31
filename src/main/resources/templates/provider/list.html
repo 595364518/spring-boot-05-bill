@@ -43,7 +43,7 @@
                 <td>
                     <a th:href="@{/provider/} + ${p.pid}" href="view.html"><img th:src="@{/img/read.png}" src="../img/read.png" alt="查看" title="查看"/></a>
                     <a th:href="@{/provider/} + ${p.pid} + '?type=update'" href="update.html"><img th:src="@{/img/xiugai.png}" src="../img/xiugai.png" alt="修改" title="修改"/></a>
-					<a href="#" class="delete" ><img th:src="@{/img/schu.png}" src="../img/schu.png" alt="删除" title="删除"/></a>
+					<a th:attr="del_uri=@{/provider/} + ${p.pid}" href="#" class="delete" ><img th:src="@{/img/schu.png}" src="../img/schu.png" alt="删除" title="删除"/></a>
                 </td>
             </tr>
         </table>
