@@ -52,6 +52,9 @@ public class UserDao {
                     users.add(user);
                 }
             }
+            if(count == 0){
+                users = new ArrayList<User>();
+            }
         }
 
         return users;

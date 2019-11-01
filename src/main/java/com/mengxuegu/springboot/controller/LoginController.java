@@ -1,10 +1,13 @@
 package com.mengxuegu.springboot.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -17,7 +20,7 @@ import java.util.Map;
  */
 @Controller
 public class LoginController {
-
+    Logger logger = LoggerFactory.getLogger(getClass());
     /**
      * 用户登录
      * @param session 登录成功把用户名保存在session中
@@ -55,5 +58,18 @@ public class LoginController {
         //3.返回登录页面
         return "redirect:/index.html";
 
+    }
+
+    @GetMapping("/password")
+    public String toPasswordPage(){
+
+        return "main/password";
+    }
+    @PostMapping("/password")
+    public String changePwd(@RequestParam(value = "password")String password,Map<String,Object> map){
+
+        logger.info("修改后的密码为：" + password);
+        map.put("msg","修改成功");
+        return "main/login";
     }
 }
