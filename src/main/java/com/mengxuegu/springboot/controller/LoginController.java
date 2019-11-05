@@ -66,10 +66,9 @@ public class LoginController {
         return "main/password";
     }
     @PostMapping("/password")
-    public String changePwd(@RequestParam(value = "password")String password,Map<String,Object> map){
-
+    public String changePwd(@RequestParam(value = "password") String password, Map<String, Object> map) {
         logger.info("修改后的密码为：" + password);
-        map.put("msg","修改成功");
+        map.put("msg", "修改成功");
         return "main/login";
     }
 }
